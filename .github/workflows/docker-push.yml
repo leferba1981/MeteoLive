@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 env:
-  IMAGE_NAME: leferba1981/meteolive
+  IMAGE_NAME: leferbadck/meteolive
   VERSION: 1.0.${{ github.run_number }}         # Para .NET
   VERSION_TAG: v1.0.${{ github.run_number }}    # Para Docker
 
