@@ -13,12 +13,12 @@ spec:
         app: {{ .Chart.Name }}
     spec:
       containers:
-      - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
-        ports:
-        - containerPort: {{ .Values.service.port }}
-        env:
-        {{- with .Values.env }}
-        {{ toYaml . | indent 8 }}
-        {{- end }}
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+            {{- with .Values.env }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
