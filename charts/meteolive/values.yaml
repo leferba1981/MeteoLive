@@ -1,5 +1,9 @@
 replicaCount: 1
 
+env:
+  - name: ASPNETCORE_HTTP_PORTS
+    value: "6080"
+
 image:
   repository: leferbadck/meteolive
   tag: 1.0.5
