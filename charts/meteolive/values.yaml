@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: leferbadck/meteolive
+  tag: v1.0.0
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources: {}
