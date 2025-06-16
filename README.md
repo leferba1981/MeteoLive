@@ -2,7 +2,7 @@
 
 ## Construccion de imagen docker
 docker build -t meteolive .  
-docker run -p 8080:8080 meteolive  
+docker run -p 6080:6080 meteolive  
 
 ## Login and Push a DockerHub
  docker login -u [user]  
