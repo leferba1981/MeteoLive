@@ -12,6 +12,6 @@ image:
 service:
   type: NodePort
   port: 6080
-  nodePort: 6080
+  nodePort: 30080
 
 resources: {}
