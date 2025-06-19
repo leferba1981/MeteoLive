@@ -9,9 +9,8 @@ env:
   VERSION: 1.0.${{ github.run_number }}         # Para .NET
   VERSION_TAG: v1.0.${{ github.run_number }}    # Para Docker
 
-
 jobs:
-  prepare-code:
+  test-build-docker-push-helm:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,51 +22,38 @@ jobs:
       with:
         dotnet-version: '8.0.x'
 
-  test-and-build:
-    runs-on: ubuntu-latest
-    needs: prepare-code
-    
-    steps:
-      - name: Restaurar dependencias
-        run: dotnet restore MeteoLive/MeteoService/MeteoService.csproj
+    - name: Restaurar dependencias
+      run: dotnet restore MeteoService/MeteoService.csproj
 
-      - name: Compilar proyecto
-        run: dotnet build MeteoLive/MeteoService/MeteoService.csproj --configuration Release --no-restore
+    - name: Compilar proyecto
+      run: dotnet publish MeteoService/MeteoService.csproj -c Release -o out
 
-      - name: Ejecutar tests
-        run: dotnet test MeteoLive/MeteoService/MeteoService.csproj --no-build --verbosity normal
+    - name: Ejecutar tests
+      run: dotnet test MeteoService/MeteoService.csproj --no-build --verbosity normal
 
-  docker-push:
-    runs-on: ubuntu-latest
-    needs: test-and-build
-    steps:
-      - name: Construir imagen Docker
-        run: |
-          docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:$VERSION .
+    - name: Construir imagen Docker
+      run: |
+        docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:$VERSION .
 
-      - name: Login en Docker Hub
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+    - name: Login en Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - name: Push de imagen Docker
-        run: |
-          docker push $IMAGE_NAME:latest
-          docker push $IMAGE_NAME:$VERSION
+    - name: Push de imagen Docker
+      run: |
+        docker push $IMAGE_NAME:latest
+        docker push $IMAGE_NAME:$VERSION
 
-  update-helm:
-    runs-on: ubuntu-latest
-    needs: docker-push
-    steps:
-      - name: Actualizar tag de imagen en Helm values.yaml
-        run: |
-          sed -i "s/tag: .*/tag: ${VERSION}/" charts/meteolive/values.yaml
+    - name: Actualizar tag de imagen en Helm values.yaml
+      run: |
+        sed -i "s/tag: .*/tag: ${VERSION}/" charts/meteolive/values.yaml
 
-      - name: Configurar Git
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+    - name: Configurar Git
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
 
-      - name: Commit y push del nuevo tag en values.yaml
-        run: |
-          git add charts/meteolive/values.yaml
-          git commit -m "chore: update image tag to ${VERSION}"
-          git push origin main
+    - name: Commit y push del nuevo tag en values.yaml
+      run: |
+        git add charts/meteolive/values.yaml
+        git commit -m "chore: update image tag to ${VERSION}"
+        git push origin main
