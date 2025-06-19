@@ -29,13 +29,13 @@ jobs:
     
     steps:
       - name: Restaurar dependencias
-        run: dotnet restore MeteoService/MeteoService.csproj
+        run: dotnet restore MeteoLive/MeteoService/MeteoService.csproj
 
       - name: Compilar proyecto
-        run: dotnet publish MeteoService/MeteoService.csproj -c Release -o out
+        run: dotnet build MeteoLive/MeteoService/MeteoService.csproj --configuration Release --no-restore
 
       - name: Ejecutar tests
-        run: dotnet test MeteoService/MeteoService.csproj --no-build --verbosity normal
+        run: dotnet test MeteoLive/MeteoService/MeteoService.csproj --no-build --verbosity normal
 
   docker-push:
     runs-on: ubuntu-latest
