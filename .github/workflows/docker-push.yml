@@ -27,6 +27,7 @@ jobs:
       run: |
         dotnet restore MeteoService/MeteoService.csproj
         dotnet publish MeteoService/MeteoService.csproj -c Release -o out
+        dotnet test MeteoService/MeteoService.csproj --no-build --verbosity normal
 
     - name: Construir imagen Docker
       run: |
