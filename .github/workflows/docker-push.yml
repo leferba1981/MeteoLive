@@ -28,6 +28,18 @@ jobs:
     - name: Compilar proyecto
       run: dotnet publish MeteoService/MeteoService.csproj -c Release -o out
 
+    - name: Install SonarScanner
+      run: dotnet tool install --global dotnet-sonarscanner
+
+    - name: Inicia Analisis con SonarCloud
+      run: |
+        dotnet sonarscanner begin \
+          /k:"leferba1981_meteolive" \
+          /o:"leferba1981" \
+          /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
+          /d:sonar.host.url="https://sonarcloud.io" \
+          /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
+
     - name: Ejecutar tests con cobertura y umbral
       run: |
         dotnet test MeteoService/MeteoService.csproj \
@@ -37,6 +49,32 @@ jobs:
           /p:Threshold=20 \
           /p:ThresholdType=line \
           /p:ThresholdStat=total
+
+    - name: Finaliza Analisis con SonarCloud
+      run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
+    - name: Esperando Quality Gate
+      run: sleep 15
+
+    - name: Revisando el estado del Quality Gate
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: |
+        PROJECT_KEY="leferba1981_meteolive"
+        ORGANIZATION="leferba1981"
+
+        STATUS=$(curl -s -u $SONAR_TOKEN: \
+          "https://sonarcloud.io/api/qualitygates/project_status?projectKey=$PROJECT_KEY" \
+          | jq -r '.projectStatus.status')
+
+        echo "SonarCloud Quality Gate status: $STATUS"
+
+        if [[ "$STATUS" != "OK" ]]; then
+          echo "❌ Quality Gate falló (estado: $STATUS)"
+          exit 1
+        else
+          echo "✅ Quality Gate aprobado"
+        fi
 
     - name: Construir imagen Docker
       run: |
