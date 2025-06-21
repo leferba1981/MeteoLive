@@ -109,7 +109,7 @@ namespace Meteo.Infra
             return forecast;
         }
 
-        public List<WeatherRecord> CalculateForecast(double longitude, double latitude, int hours)
+        private List<WeatherRecord> CalculateForecast(double longitude, double latitude, int hours)
         {
             var now = DateTime.UtcNow;
             var random = new Random();

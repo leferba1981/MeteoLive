@@ -1,0 +1,1161 @@
+{
+  "MeteoService.dll": {
+    "D:\\github\\MeteoLive\\MeteoService\\Program.cs": {
+      "Program": {
+        "System.Void Program::<Main>$(System.String[])": {
+          "Lines": {
+            "3": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "30": 0,
+            "32": 0,
+            "34": 0
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 143,
+              "EndOffset": 145,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 143,
+              "EndOffset": 163,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "D:\\github\\MeteoLive\\MeteoService\\Meteo.Models\\Forecast.cs": {
+      "Meteo.Models.Forecast": {
+        "System.String Meteo.Models.Forecast::get_Location()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Meteo.Models.Forecast::get_IsForecast()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<Meteo.Models.WeatherRecord> Meteo.Models.Forecast::get_Records()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\github\\MeteoLive\\MeteoService\\Meteo.Models\\WeatherRecord.cs": {
+      "Meteo.Models.WeatherRecord": {
+        "System.Double Meteo.Models.WeatherRecord::get_Latitude()": {
+          "Lines": {
+            "9": 10
+          },
+          "Branches": []
+        },
+        "System.Double Meteo.Models.WeatherRecord::get_Longitude()": {
+          "Lines": {
+            "11": 7
+          },
+          "Branches": []
+        },
+        "System.Int32 Meteo.Models.WeatherRecord::get_Altitude()": {
+          "Lines": {
+            "13": 2
+          },
+          "Branches": []
+        },
+        "System.Double Meteo.Models.WeatherRecord::get_Temperature()": {
+          "Lines": {
+            "15": 2
+          },
+          "Branches": []
+        },
+        "System.Double Meteo.Models.WeatherRecord::get_Pressure()": {
+          "Lines": {
+            "17": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 Meteo.Models.WeatherRecord::get_Precipitation()": {
+          "Lines": {
+            "19": 2
+          },
+          "Branches": []
+        },
+        "System.Double Meteo.Models.WeatherRecord::get_Humidity()": {
+          "Lines": {
+            "21": 7
+          },
+          "Branches": []
+        },
+        "System.Double Meteo.Models.WeatherRecord::get_Radiation()": {
+          "Lines": {
+            "23": 2
+          },
+          "Branches": []
+        },
+        "System.Double Meteo.Models.WeatherRecord::get_WindSpeed()": {
+          "Lines": {
+            "25": 6
+          },
+          "Branches": []
+        },
+        "System.Double Meteo.Models.WeatherRecord::get_WindDirection()": {
+          "Lines": {
+            "27": 6
+          },
+          "Branches": []
+        },
+        "System.DateTime Meteo.Models.WeatherRecord::get_DateTime()": {
+          "Lines": {
+            "29": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\github\\MeteoLive\\MeteoService\\Meteo.Infra\\MeteoApiClient.cs": {
+      "Meteo.Infra.MeteoApiClient": {
+        "System.Void Meteo.Infra.MeteoApiClient::.ctor(System.Net.Http.HttpClient)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      },
+      "Meteo.Infra.MeteoApiClient/<QueryLocationAsync>d__2": {
+        "System.Void Meteo.Infra.MeteoApiClient/<QueryLocationAsync>d__2::MoveNext()": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "25": 0,
+            "26": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 342,
+              "EndOffset": 344,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 342,
+              "EndOffset": 351,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "D:\\github\\MeteoLive\\MeteoService\\Meteo.Infra\\MeteoService.cs": {
+      "Meteo.Infra.MeteoService": {
+        "System.Void Meteo.Infra.MeteoService::AddWeatherRecord(Meteo.Models.WeatherRecord)": {
+          "Lines": {
+            "16": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2
+          },
+          "Branches": [
+            {
+              "Line": 17,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Meteo.Infra.MeteoService::UpdateWeatherRecord(Meteo.Models.WeatherRecord,System.Int32)": {
+          "Lines": {
+            "22": 1,
+            "23": 1,
+            "24": 0,
+            "26": 1,
+            "28": 1,
+            "30": 1,
+            "31": 0,
+            "33": 5,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 3,
+              "EndOffset": 5,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 23,
+              "Offset": 3,
+              "EndOffset": 15,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 18,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 26,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 37,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 30,
+              "Offset": 92,
+              "EndOffset": 94,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 30,
+              "Offset": 92,
+              "EndOffset": 105,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 33,
+              "Offset": 246,
+              "EndOffset": 116,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 33,
+              "Offset": 246,
+              "EndOffset": 251,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Collections.Generic.IEnumerable`1<Meteo.Models.WeatherRecord> Meteo.Infra.MeteoService::GetWeatherRecords(System.Double,System.Double,System.Nullable`1<System.DateTime>,System.Int32)": {
+          "Lines": {
+            "48": 4,
+            "49": 4,
+            "50": 0,
+            "52": 4,
+            "53": 0,
+            "56": 4,
+            "58": 4,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "63": 4,
+            "64": 0,
+            "67": 4,
+            "68": 4,
+            "69": 4,
+            "71": 4,
+            "72": 3,
+            "73": 3,
+            "74": 3,
+            "75": 3,
+            "76": 3,
+            "77": 3,
+            "78": 3,
+            "79": 3,
+            "80": 3,
+            "81": 7,
+            "83": 4,
+            "84": 1,
+            "85": 2,
+            "86": 1,
+            "87": 4,
+            "88": 4
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 51,
+              "EndOffset": 53,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 49,
+              "Offset": 68,
+              "EndOffset": 70,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 4
+            },
+            {
+              "Line": 49,
+              "Offset": 85,
+              "EndOffset": 87,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 4
+            },
+            {
+              "Line": 49,
+              "Offset": 51,
+              "EndOffset": 106,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 68,
+              "EndOffset": 106,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 85,
+              "EndOffset": 106,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 109,
+              "EndOffset": 111,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 109,
+              "EndOffset": 122,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 4
+            },
+            {
+              "Line": 52,
+              "Offset": 129,
+              "EndOffset": 131,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 4
+            },
+            {
+              "Line": 52,
+              "Offset": 129,
+              "EndOffset": 146,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 151,
+              "EndOffset": 153,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 52,
+              "Offset": 151,
+              "EndOffset": 164,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 4
+            },
+            {
+              "Line": 58,
+              "Offset": 203,
+              "EndOffset": 205,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 58,
+              "Offset": 203,
+              "EndOffset": 226,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 4
+            },
+            {
+              "Line": 63,
+              "Offset": 241,
+              "EndOffset": 243,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 4
+            },
+            {
+              "Line": 63,
+              "Offset": 258,
+              "EndOffset": 260,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 4
+            },
+            {
+              "Line": 63,
+              "Offset": 275,
+              "EndOffset": 277,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 4
+            },
+            {
+              "Line": 63,
+              "Offset": 241,
+              "EndOffset": 296,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 258,
+              "EndOffset": 296,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 275,
+              "EndOffset": 296,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 301,
+              "EndOffset": 303,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 301,
+              "EndOffset": 314,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 4
+            },
+            {
+              "Line": 83,
+              "Offset": 427,
+              "EndOffset": 429,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 1
+            },
+            {
+              "Line": 83,
+              "Offset": 427,
+              "EndOffset": 450,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 4
+            },
+            {
+              "Line": 56,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 12,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "Meteo.Models.Forecast Meteo.Infra.MeteoService::GetForecast(System.Double,System.Double,System.Int32)": {
+          "Lines": {
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "95": 0,
+            "96": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "109": 0,
+            "110": 0
+          },
+          "Branches": [
+            {
+              "Line": 92,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 11,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 23,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 35,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 54,
+              "EndOffset": 56,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 54,
+              "EndOffset": 67,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 95,
+              "Offset": 69,
+              "EndOffset": 71,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 95,
+              "Offset": 69,
+              "EndOffset": 81,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 95,
+              "Offset": 84,
+              "EndOffset": 86,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 95,
+              "Offset": 84,
+              "EndOffset": 97,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 99,
+              "Offset": 108,
+              "EndOffset": 110,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 99,
+              "Offset": 108,
+              "EndOffset": 121,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 99,
+              "Offset": 126,
+              "EndOffset": 128,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 99,
+              "Offset": 126,
+              "EndOffset": 139,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Collections.Generic.List`1<Meteo.Models.WeatherRecord> Meteo.Infra.MeteoService::CalculateForecast(System.Double,System.Double,System.Int32)": {
+          "Lines": {
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0
+          },
+          "Branches": [
+            {
+              "Line": 118,
+              "Offset": 165,
+              "EndOffset": 26,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 165,
+              "EndOffset": 170,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Meteo.Infra.MeteoService::.ctor()": {
+          "Lines": {
+            "11": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "D:\\github\\MeteoLive\\MeteoService\\Meteo.Api\\MeteoController.cs": {
+      "Meteo.Api.Controllers.MeteoController": {
+        "Microsoft.AspNetCore.Mvc.IActionResult Meteo.Api.Controllers.MeteoController::RegisterWeatherRecord(Meteo.Models.WeatherRecord)": {
+          "Lines": {
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 7,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult Meteo.Api.Controllers.MeteoController::UpdateWeatherRecord(Meteo.Models.WeatherRecord,System.Int32)": {
+          "Lines": {
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "49": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "59": 0
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 7,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 46,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 46,
+              "Offset": 45,
+              "EndOffset": 66,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult Meteo.Api.Controllers.MeteoController::GetForecast(System.Double,System.Double,System.Int32)": {
+          "Lines": {
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0
+          },
+          "Branches": [
+            {
+              "Line": 67,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 11,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 23,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 35,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 54,
+              "EndOffset": 56,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 54,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 72,
+              "EndOffset": 74,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 72,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 87,
+              "EndOffset": 103,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.IActionResult Meteo.Api.Controllers.MeteoController::GetHistorical(System.Double,System.Double,System.String,System.Int32)": {
+          "Lines": {
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0
+          },
+          "Branches": [
+            {
+              "Line": 86,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 35,
+              "EndOffset": 37,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 11,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 23,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 35,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 54,
+              "EndOffset": 56,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 54,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 90,
+              "Offset": 95,
+              "EndOffset": 97,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 113,
+              "EndOffset": 115,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 113,
+              "EndOffset": 133,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 90,
+              "Offset": 95,
+              "EndOffset": 143,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 98,
+              "Offset": 161,
+              "EndOffset": 163,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 98,
+              "Offset": 161,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 98,
+              "Offset": 179,
+              "EndOffset": 181,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 98,
+              "Offset": 179,
+              "EndOffset": 201,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void Meteo.Api.Controllers.MeteoController::.ctor(Meteo.Infra.MeteoService,System.Net.Http.HttpClient)": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        }
+      },
+      "Meteo.Api.Controllers.MeteoController/<QueryLocation>d__7": {
+        "System.Void Meteo.Api.Controllers.MeteoController/<QueryLocation>d__7::MoveNext()": {
+          "Lines": {
+            "111": 0,
+            "112": 0,
+            "114": 0,
+            "115": 0,
+            "117": 0,
+            "118": 0
+          },
+          "Branches": [
+            {
+              "Line": 114,
+              "Offset": 170,
+              "EndOffset": 172,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 114,
+              "Offset": 170,
+              "EndOffset": 196,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

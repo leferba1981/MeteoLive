@@ -1,53 +1,72 @@
-using Xunit;
-using Meteo.Api.Controllers;
+using System;
+using System.Linq;
 using Meteo.Infra;
 using Meteo.Models;
-using Microsoft.AspNetCore.Mvc;
-using Moq;
+using Xunit;
 
-public class MeteoControllerTests
+public class MeteoServiceTests
 {
     [Fact]
-    public async Task QueryLocation_ReturnsOk_WhenForecastIsNotNull()
+    public void AddWeatherRecord_ShouldAddRecord()
     {
-        var hourlyUnits = new HourlyUnits("°C", "°C", "mm", "km/h", "mm", "yes");
-        var hourlyData = new HourlyData(
-            new List<long> { 1633035600 },
-            new List<double> { 20.5 },
-            new List<double> { 19.5 },
-            new List<double> { 0.0 },
-            new List<double> { 5.0 },
-            new List<double> { 0.0 }
-        );
+        var service = new Meteo.Infra.MeteoService();
+        var record = new WeatherRecord
+        {
+            Latitude = 10,
+            Longitude = 20,
+            DateTime = DateTime.UtcNow,
+            Humidity = 50,
+            WindSpeed = 5,
+            WindDirection = 90
+        };
 
-        var mockApiClient = new Mock<MeteoApiClient>();
-        mockApiClient.Setup(x => x.QueryLocationAsync(It.IsAny<double>(), It.IsAny<double>()))
-            .ReturnsAsync(new Forecast(4, -71, 1000, 3600, "America/New_York", "EST", 10, hourlyUnits, hourlyData));
+        service.AddWeatherRecord(record);
+        var records = service.GetWeatherRecords(10, 20).ToList();
 
-        var controller = new MeteoController(mockApiClient.Object);
-
-        // Act
-        var result = await controller.QueryLocation(4, -71);
-
-        // Assert
-        Assert.IsType<OkObjectResult>(result);
+        Assert.Single(records);
+        Assert.Equal(50, records[0].Humidity);
     }
 
     [Fact]
-    public async Task QueryLocation_Returns502_WhenForecastIsNull()
+    public void UpdateWeatherRecord_ShouldUpdateExistingRecord()
     {
-        // Arrange
-        var mockApiClient = new Mock<MeteoApiClient>();
-        mockApiClient.Setup(x => x.QueryLocationAsync(It.IsAny<double>(), It.IsAny<double>()))
-            .ReturnsAsync((Forecast)null);
+        var service = new Meteo.Infra.MeteoService();
+        var record = new WeatherRecord
+        {
+            Latitude = 10,
+            Longitude = 20,
+            DateTime = DateTime.UtcNow,
+            Humidity = 50,
+            WindSpeed = 5,
+            WindDirection = 90
+        };
+        service.AddWeatherRecord(record);
 
-        var controller = new MeteoController(mockApiClient.Object);
+        var updated = new WeatherRecord
+        {
+            Latitude = 10,
+            Longitude = 20,
+            DateTime = record.DateTime,
+            Humidity = 80,
+            WindSpeed = 10,
+            WindDirection = 180
+        };
 
-        // Act
-        var result = await controller.QueryLocation(4, -390);
+        var result = service.UpdateWeatherRecord(updated);
+        var records = service.GetWeatherRecords(10, 20).ToList();
 
-        // Assert
-        var statusResult = Assert.IsType<ObjectResult>(result);
-        Assert.Equal(502, statusResult.StatusCode);
+        Assert.True(result);
+        Assert.Single(records);
+        Assert.Equal(80, records[0].Humidity);
+        Assert.Equal(10, records[0].WindSpeed);
+        Assert.Equal(180, records[0].WindDirection);
+    }
+
+    [Fact]
+    public void GetWeatherRecords_ShouldReturnEmpty_WhenNoMatch()
+    {
+        var service = new Meteo.Infra.MeteoService();
+        var records = service.GetWeatherRecords(0, 0);
+        Assert.Empty(records);
     }
 }

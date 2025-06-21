@@ -28,8 +28,15 @@ jobs:
     - name: Compilar proyecto
       run: dotnet publish MeteoService/MeteoService.csproj -c Release -o out
 
-    - name: Ejecutar tests
-      run: dotnet test MeteoService/MeteoService.csproj --no-build --verbosity normal
+    - name: Ejecutar tests con cobertura y umbral
+      run: |
+        dotnet test MeteoService/MeteoService.csproj \
+          --no-build --verbosity normal \
+          /p:CollectCoverage=true \
+          /p:CoverletOutputFormat=cobertura \
+          /p:Threshold=20 \
+          /p:ThresholdType=line \
+          /p:ThresholdStat=total
 
     - name: Construir imagen Docker
       run: |
