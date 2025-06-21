@@ -69,4 +69,31 @@ public class MeteoServiceTests
         var records = service.GetWeatherRecords(0, 0);
         Assert.Empty(records);
     }
+
+    [Fact]
+    public void AddWeatherRecord_ShouldThrow_WhenNull()
+    {
+        var service = new Meteo.Infra.MeteoService();
+        Assert.Throws<ArgumentNullException>(() => service.AddWeatherRecord(null));
+    }
+
+    [Fact]
+    public void GetWeatherRecords_WithRadius_ShouldReturnNearbyRecords()
+    {
+        var service = new Meteo.Infra.MeteoService();
+        var record = new WeatherRecord
+        {
+            Latitude = 10,
+            Longitude = 20,
+            DateTime = DateTime.UtcNow,
+            Humidity = 60,
+            WindSpeed = 7,
+            WindDirection = 120
+        };
+        service.AddWeatherRecord(record);
+
+        // Slightly offset coordinates, within 1000 meters
+        var records = service.GetWeatherRecords(10.0005, 20.0005, null, 1000).ToList();
+        Assert.NotEmpty(records);
+    }
 }
