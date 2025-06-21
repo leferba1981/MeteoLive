@@ -1,3 +1,5 @@
+using Meteo.Infra;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,8 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddHttpClient(); 
+builder.Services.AddHttpClient();
 builder.Services.AddHttpClient<Meteo.Infra.MeteoApiClient>(); 
+builder.Services.AddSingleton<MeteoService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins",

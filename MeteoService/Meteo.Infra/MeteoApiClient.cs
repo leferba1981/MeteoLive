@@ -28,5 +28,6 @@ namespace Meteo.Infra
             var json = await response.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<Forecast>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
         }
+
     }
 }
