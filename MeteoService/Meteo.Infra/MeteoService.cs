@@ -101,7 +101,7 @@ namespace Meteo.Infra
 
             var forecast = new Forecast
             {
-                AlgorithmVersion = "1.0",
+                AlgorithmVersion = "1.1-alpha",
                 Location = $"Lat: {latitude}, Lon: {longitude}",
                 IsForecast = true,
                 Records = records
@@ -123,7 +123,7 @@ namespace Meteo.Infra
                     Latitude = latitude,
                     Longitude = longitude,
                     DateTime = now.AddHours(i),
-                    Humidity = random.NextDouble() * 100, // 0-100%
+                    Humidity = random.NextDouble() * 98, // 0-100%
                     WindSpeed = Math.Round(random.NextDouble() * 20, 2), // 0-20 m/s
                     WindDirection = Math.Round(random.NextDouble() * 360, 2) // 0-360°
                 });
