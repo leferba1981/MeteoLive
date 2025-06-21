@@ -40,9 +40,12 @@ jobs:
           /d:sonar.host.url="https://sonarcloud.io" \
           /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
 
+    - name: Restaurar solución completa
+      run: dotnet restore MeteoLive.sln
+
     - name: Compilar solución (requerido por Sonar)
       run: dotnet build MeteoLive.sln --no-incremental --no-restore
-
+      
     - name: Ejecutar tests con cobertura y umbral
       run: |
         dotnet test MeteoService/MeteoService.csproj \
