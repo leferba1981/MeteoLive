@@ -34,7 +34,7 @@ jobs:
     - name: Inicia Analisis con SonarCloud
       run: |
         dotnet sonarscanner begin \
-          /k:"leferba1981_meteolive" \
+          /k:"leferba1981_MeteoLive" \
           /o:"leferba1981" \
           /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
           /d:sonar.host.url="https://sonarcloud.io" \
@@ -66,7 +66,7 @@ jobs:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
-        PROJECT_KEY="leferba1981_meteolive"
+        PROJECT_KEY="leferba1981_MeteoLive"
         ORGANIZATION="leferba1981"
 
         STATUS=$(curl -s -u $SONAR_TOKEN: \
