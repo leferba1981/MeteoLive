@@ -101,6 +101,7 @@ namespace Meteo.Infra
 
             var forecast = new Forecast
             {
+                AlgorithmVersion = "1.0",
                 Location = $"Lat: {latitude}, Lon: {longitude}",
                 IsForecast = true,
                 Records = records
