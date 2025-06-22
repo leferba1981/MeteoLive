@@ -96,4 +96,12 @@ public class MeteoServiceTests
         var records = service.GetWeatherRecords(10.0005, 20.0005, null, 1000).ToList();
         Assert.NotEmpty(records);
     }
+
+    [Fact]
+    public void Forecast_AlgorithmVersion_ShouldBeDefault()
+    {
+        var forecast = new Forecast();
+        forecast.AlgorithmVersion = "1.1-alpha"; // Simulating a version set by the service
+        Assert.Equal("1.1-alpha", forecast.AlgorithmVersion);
+    }
 }

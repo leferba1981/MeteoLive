@@ -3,7 +3,7 @@ namespace Meteo.Models
     public class Forecast
     {
 
-        public string AlgorithmVersion { get; set; }
+        public string? AlgorithmVersion { get; set; }
         public string Location { get; set; }
 
         public bool IsForecast { get; set; } // false = historical data, true = forecast data
